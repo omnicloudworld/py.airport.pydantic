@@ -1,0 +1,88 @@
+[tool.poetry]
+
+name = "omnicloud-airport-pydantic"
+version = "0.0.0dev0"
+description = "Omnicloud Terminals for pydantic.BaseModel & pydantic.Config"
+keywords = ["omnicloud", "supercloud", "multicloud", "cloud computing", "migration", "gcp", "Google"]
+authors = ["Iurii Tarasenko <iurii@omnicloud.world>"]
+readme = "README.md"
+packages = [{include = "omnicloud"}]
+
+homepage = "https://omnicloud.world/airport"
+repository = "https://github.com/omnicloudworld/py.airport.pydantic"
+documentation = "https://docs.omnicloud.world/py-airport-pydantic"
+
+classifiers = [
+    "Programming Language :: Python :: 3.10",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "License :: OSI Approved :: MIT License"
+]
+
+
+[tool.poetry.dependencies]
+python = "^3.10"
+omnicloud-airport = "^0.0.2"
+
+
+[tool.poetry.group.dev.dependencies]
+duty = "^0.9.0"
+ipykernel = "^6.22.0"
+pyyaml = "^6.0"
+pyyaml-env-tag = "^0.1"
+omnicloud-tools = "^0.0.1"
+flake8 = "^6.0.0"
+flake8-docstrings = "^1.7.0"
+pep8-naming = "^0.13.3"
+flake8-pyproject = "^1.2.3"
+flake8-bugbear = "^23.5.9"
+jedi = "^0.18.2"
+black = "^23.3.0"
+pre-commit = "^3.3.1"
+
+
+[tool.poetry.group.mkdocs.dependencies]
+mkdocs = "^1.4.2"
+mkdocs-material = "^9.1.4"
+mkdocstrings = {extras = ["python"], version = "^0.20.0"}
+mkdocs-section-index = "^0.3.5"
+mkdocs-glightbox = "^0.3.2"
+mkdocs-same-dir = "^0.1.2"
+mkdocs-include-markdown-plugin = "3.9.1"
+
+
+[tool.flake8]
+ignore = ['D300']
+per-file-ignores = [
+]
+max-line-length = 120
+count = true
+
+[tool.black]
+line-length = 120
+target-version = ['py310', 'py311']
+include = '\.py?$'
+skip-string-normalization = true
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | \.docs
+  | \.github
+  | \.lab
+  | \.vscode
+)/
+'''
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
