@@ -24,6 +24,8 @@ classifiers = [
 [tool.poetry.dependencies]
 python = "^3.10"
 omnicloud-airport = "^0.0.2"
+pydantic = "^1.10.7"
+flake8-pyproject = "^1.2.3"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -35,7 +37,6 @@ omnicloud-tools = "^0.0.1"
 flake8 = "^6.0.0"
 flake8-docstrings = "^1.7.0"
 pep8-naming = "^0.13.3"
-flake8-pyproject = "^1.2.3"
 flake8-bugbear = "^23.5.9"
 jedi = "^0.18.2"
 black = "^23.3.0"
@@ -56,11 +57,13 @@ mkdocs-include-markdown-plugin = "3.9.1"
 ignore = ['D300']
 per-file-ignores = [
 ]
-max-line-length = 120
+max-line-length = 115
 count = true
+docstring-convention = "google"
+
 
 [tool.black]
-line-length = 120
+line-length = 115
 target-version = ['py310', 'py311']
 include = '\.py?$'
 skip-string-normalization = true
