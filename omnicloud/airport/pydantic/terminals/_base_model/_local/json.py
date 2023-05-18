@@ -7,10 +7,8 @@ __all__ = ['LocalJSON']
 
 
 class LocalJSON(Terminal.Gate):
-
     @classmethod
     def arriving(cls, place: str, **options):  # noqa: D102
-
         option_string = ','.join([f'{k}={v}' for k, v in options.items()])
         data = Dict.arriving(f'LocalJSON::{place}::{option_string}')
 
@@ -18,6 +16,5 @@ class LocalJSON(Terminal.Gate):
 
     @classmethod
     def departure(cls, parcel, place: str, **options):
-
         option_string = ','.join([f'{k}={v}' for k, v in options.items()])
         Dict.departure(parcel, f'LocalJSON::{place}::{option_string}')
